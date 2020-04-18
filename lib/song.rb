@@ -29,7 +29,8 @@ class Song
   
   def self.find_or_create_by_name(name)
     self.find_by_name(name) ||  self.create_by_name(name)
-  end 
+end
+   
   
   def self.alphabetical
     @@all.sort_by {|song| song.name}
@@ -50,8 +51,9 @@ class Song
     song.name = array[1].chomp(".mp3") 
     @@all << song 
     song
-  end 
+  end
   
+
   def self.destroy_all
     @@all.clear
   end 
